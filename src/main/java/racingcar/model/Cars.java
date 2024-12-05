@@ -5,7 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Cars {
-    private List<Car> racingCars = new ArrayList<>();
+    protected List<Car> racingCars = new ArrayList<>();
+
+    public Cars() {
+    }
 
     public Cars(String carNames) {
         List<String> names = splitName(carNames);
