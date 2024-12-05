@@ -7,13 +7,7 @@ import java.util.List;
 public class Game {
     private static int MOVABLE_NUMBER_STANDARD = 4;
 
-    public void playGameAttemptCountRound(List<Car> racingCars, int attemptCount) {
-        for (int i = 0; i < attemptCount; i++) {
-            playGameOneRound(racingCars);
-        }
-    }
-
-    private void playGameOneRound(List<Car> racingCars) {
+    public void playGameOneRound(List<Car> racingCars) {
         for (Car racingCar : racingCars) {
             if (checkISMovable()) racingCar.moveForward();
         }
@@ -28,7 +22,13 @@ public class Game {
         return Randoms.pickNumberInRange(0, 9);
     }
 
-    public List<Car> decideWinningCars(List<Car> racingCars) {
+    public WinningCars createWinningCars(List<Car> racingCars){
+       List<Car> winningRacingCars = decideWinningCars(racingCars);
+       WinningCars winningCars = new WinningCars(winningRacingCars);
+       return winningCars;
+    }
+
+    private List<Car> decideWinningCars(List<Car> racingCars) {
         int maxPosition = decideMaxPosition(racingCars);
         List<Car> winningRacingCars = racingCars.stream()
                 .filter(car -> car.getPosition() == maxPosition)

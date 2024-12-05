@@ -23,4 +23,8 @@ public class Cars {
                 .toList();
         return names;
     }
+
+    public List<Car> getRacingCars() {
+        return racingCars;
+    }
 }
