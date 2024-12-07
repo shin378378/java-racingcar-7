@@ -26,8 +26,18 @@ public class Game {
     }
 
     public List<Car> decideWinningCars(List<Car> racingCars){
-        racingCars.stream()
-                .max(getPosition())
-                .stream().toList();
+        int maxPosition = decideMaxPosition(racingCars);
+        List<Car> winningCars = racingCars.stream()
+                .filter(car -> car.getPosition()==maxPosition)
+                .toList();
+        return winningCars;
+    }
+
+    private int decideMaxPosition(List<Car> racingCars){
+        int maxPosition = racingCars.stream()
+                .mapToInt(racingCar->racingCar.getPosition())
+                .max()
+                .orElse(0);
+        return maxPosition;
     }
 }
