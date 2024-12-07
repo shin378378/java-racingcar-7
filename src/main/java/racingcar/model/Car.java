@@ -22,6 +22,10 @@ public class Car {
         this.position = position + MOVE_OFFSET;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getPosition() {
         return position;
     }

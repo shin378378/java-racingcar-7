@@ -16,14 +16,18 @@ public class Controller {
     public void playGame(){
         String carNames = inputView.inputCarNames();
         Cars cars = new Cars(carNames);
-
         List<Car> racingCars = cars.getRacingCars();
+        playNRoundGame(racingCars);
+        List<Car> winningRacingCars = game.decideWinningRacingCars(racingCars);
+        outputView.outputTrialResult();
+        outputView.outputWinningRacingCars(winningRacingCars);
+    }
+
+    private void playNRoundGame(List<Car> racingCars){
         int trialCount = inputView.inputTrialCount();
         for (int i = 0; i < trialCount; i++) {
             game.playOneGround(racingCars);
             outputView.outputOneRoundTrialResult(racingCars);
         }
-
-
     }
 }

@@ -2,7 +2,6 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Game {
@@ -25,12 +24,12 @@ public class Game {
         return Randoms.pickNumberInRange(0, 9);
     }
 
-    public List<Car> decideWinningCars(List<Car> racingCars){
+    public List<Car> decideWinningRacingCars(List<Car> racingCars){
         int maxPosition = decideMaxPosition(racingCars);
-        List<Car> winningCars = racingCars.stream()
+        List<Car> winningRacingCars = racingCars.stream()
                 .filter(car -> car.getPosition()==maxPosition)
                 .toList();
-        return winningCars;
+        return winningRacingCars;
     }
 
     private int decideMaxPosition(List<Car> racingCars){
