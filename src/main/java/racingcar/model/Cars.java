@@ -25,4 +25,8 @@ public class Cars {
             throw new IllegalArgumentException("[ERROR] 빈 이름이 입력되었습니다.");
         }
     }
+
+    public List<Car> getRacingCars() {
+        return racingCars;
+    }
 }

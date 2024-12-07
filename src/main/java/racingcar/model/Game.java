@@ -2,11 +2,17 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+import java.util.List;
+
 public class Game {
     private static final int MOVABLE_NUMBER_STANDARD = 4;
 
-    public void playOneGround(List){
-
+    public void playOneGround(List<Car> racingCars){
+        for (Car car : racingCars) {
+            if(checkMovable()){
+                car.moveForward();
+            }
+        }
     }
 
     private boolean checkMovable() {
