@@ -21,4 +21,8 @@ public class Car {
     public void moveForward() {
         this.position = position + MOVE_OFFSET;
     }
+
+    public int getPosition() {
+        return position;
+    }
 }

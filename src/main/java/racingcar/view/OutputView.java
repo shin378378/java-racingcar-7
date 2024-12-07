@@ -12,7 +12,7 @@ public class OutputView {
 
     public void outputOneRoundTrialResult(List<Car> racingCars){
         racingCars.stream()
-                .map(racingCars -> )
-
+                .map(racingCar -> racingCar.getPosition()+" : "+"-".repeat(racingCar.getPosition()))
+                .forEach(System.out::println);
     }
 }
