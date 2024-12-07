@@ -9,5 +9,6 @@ public class Controller {
     public void playGame(){
         String carNames = inputView.inputCarNames();
         Cars cars = new Cars(carNames);
+        int trialCount = inputView.inputTrialCount();
     }
 }
