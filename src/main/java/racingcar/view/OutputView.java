@@ -11,7 +11,8 @@ public class OutputView {
     }
 
     public void outputOneRoundTrialResult(List<Car> racingCars){
-        Arrays.stream(racingCars)
+        racingCars.stream()
+                .map(racingCars -> )
 
     }
 }
