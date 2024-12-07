@@ -2,6 +2,7 @@ package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Game {
@@ -22,5 +23,11 @@ public class Game {
 
     private int createRandomNumber() {
         return Randoms.pickNumberInRange(0, 9);
+    }
+
+    public List<Car> decideWinningCars(List<Car> racingCars){
+        racingCars.stream()
+                .max(getPosition())
+                .stream().toList();
     }
 }
